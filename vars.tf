@@ -14,3 +14,9 @@ variable "cidr_subnet" {
 variable "ami" {
   default = "ami-003634241a8fcdec0"
 }
+variable "instance_type" {
+  default = "t2.micro"
+}
+variable "vol_size" {
+  default = 10
+}

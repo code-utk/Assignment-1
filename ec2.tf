@@ -1,17 +1,18 @@
 resource "aws_instance" "ec2" {
   ami                    = var.ami
-  instance_type          = "t2.micro"
+  instance_type          = var.instance_type
   subnet_id              = aws_subnet.main_subnet.id
-  vpc_security_group_ids = [ aws_security_group.default.id ]
+  key_name               = "ssh"
+  vpc_security_group_ids = [aws_security_group.default.id]
 
   root_block_device {
     volume_type           = "gp2"
-    volume_size           = 10
+    volume_size           = var.vol_size
     delete_on_termination = true
   }
 
   tags = {
-    "Name" = "Assignment 1"
+    "Name" = "Assignment-1"
   }
 }
 resource "aws_security_group" "default" {
