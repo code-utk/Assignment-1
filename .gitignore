@@ -1,0 +1,4 @@
+.terraform
+1
+terraform.tfstate
+terraform.tfstate.backup
