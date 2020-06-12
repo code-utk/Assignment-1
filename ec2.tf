@@ -3,7 +3,6 @@ resource "aws_instance" "ec2" {
   instance_type          = "t2.micro"
   subnet_id              = aws_subnet.main_subnet.id
   vpc_security_group_ids = [ aws_security_group.default.id ]
-  key_name               = "First Instance EC2"
 
   root_block_device {
     volume_type           = "gp2"
